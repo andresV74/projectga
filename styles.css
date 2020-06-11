@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 16px;
+	color: #EEE;
+	background-color: #393E46;
+}
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 15px 0;
+	background-color: #222831;
+}
+.header img {
+	display: block;
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+h1 {
+	width: 100%;
+	font-size: 1.5rem;
+	letter-spacing: 0.2rem;
+	text-align: center;
+	text-shadow: 0 0 10px #32e0c4d6
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(140px, 1fr));
+	grid-gap: 30px 20px;
+	overflow: hidden;
+	padding: 0 10px;
+}
+.grid .character {
+	justify-self: center;
+	border-radius: 14px;
+	box-shadow: 0 5px 15px #22283161;
+}
+.grid .character:hover {
+	animation: hover .4s ease-in-out;
+}
+.grid .character-image {
+	font-size: 0;
+}
+.grid .character img {
+	width: 100%;
+	max-width: 300px;
+	border-radius: 14px 14px 0 0;
+	overflow: hidden;
+}
+.grid .character-name {
+	padding: 5px;
+	font-size: 1rem;
+	line-height: 1.3;
+	text-align: center;
+	background-color: #661FA2;
+}
+.grid .character-location {
+	padding: 5px;
+	border-radius: 0 0 14px 14px;
+	font-size: .75rem;
+	line-height: 1.3;
+	text-align: center;
+	background-color: #32e0c480;
+}
+
+@media screen and (min-width: 600px) {
+	h1 {
+		font-size: 2rem;
+	}
+.grid {
+	grid-template-columns: repeat(3, minmax(140px, 1fr));
+	grid-gap: 40px 20px;
+	padding: 0 20px;
+}
+	.grid .character-name {
+		font-size: 1.25rem;
+	}
+	.grid .character-location {
+		font-size: .875rem;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.grid {
+		grid-template-columns: repeat(4, minmax(150px, 1fr));
+		grid-gap: 50px 30px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.grid {
+		grid-template-columns: repeat(5, minmax(150px, 1fr));
+		grid-gap: 60px 40px;
+	}
+}
+
+
+  @keyframes hover {
+    0% {
+      transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(5deg) scale(1.05);
+			filter: hue-rotate(90deg);
+		}
+		50% {
+			transform: rotate(-5deg) scale(1.1);
+			filter: hue-rotate(180deg);
+		}
+		75% {
+			transform: rotate(5deg) scale(1.05);
+			filter: hue-rotate(270deg);
+		}
+    100% {
+			transform: rotate(0) scale(1);
+			filter: hue-rotate(360deg);
+    }
+  }
